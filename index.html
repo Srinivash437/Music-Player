@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta tags for character set and responsiveness -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Page Title -->
+    <title>Music Player</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap Icons CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Wrapper row to center the player -->
+    <div class="row justify-content-center m-0">
+      <!-- Music Player Container -->
+      <div class="player col-sm-12 col-md-8 col-lg-8 col-xl-4 col-xxl-4 p-0">
+        <!-- Top Title Bar -->
+        <div class="top-bar">MUSIC PLAYER</div>
+
+        <!-- Album Art Section -->
+        <center>
+          <div class="img-area">
+            <img src="" alt="" />
+          </div>
+        </center>
+
+        <!-- Song Name and Artist Info -->
+        <div class="song-details">
+          <p class="name"></p>
+          <p class="artist"></p>
+        </div>
+
+        <!-- Progress Bar and Time Display -->
+        <div class="progress-area">
+          <div class="progress-bar">
+            <!-- Main Audio Element (dynamic audio source will be set via JS) -->
+            <audio id="main-audio" src=""></audio>
+          </div>
+          <!-- Current time / Duration display -->
+          <div class="song-timer">
+            <span class="current-time">0:00</span>
+            <span class="max-duration">0:00</span>
+          </div>
+        </div>
+
+        <!-- Volume Slider Control -->
+        <div class="slider-container">
+          <i class="bi bi-volume-down"></i>
+          <input
+            type="range"
+            min="1"
+            max="100"
+            value="100"
+            class="volume-slider"
+            onchange="setVolume()"
+          />
+          <i class="bi bi-volume-up"></i>
+        </div>
+
+        <!-- Main Control Buttons: Repeat, Prev, Play/Pause, Next, Playlist -->
+        <div class="controls">
+          <i
+            id="repeat-playlist"
+            class="bi bi-repeat"
+            title="Playlist looped"
+          ></i>
+          <i id="prev" class="bi bi-skip-start-fill"></i>
+          <div class="play-pause">
+            <i class="bi bi-play-fill"></i>
+          </div>
+          <i id="next" class="bi bi-skip-end-fill"></i>
+          <i id="more-music" class="bi bi-music-note-list"></i>
+        </div>
+
+        <!-- Music List (hidden by default, shown on toggle) -->
+        <div class="music-list">
+          <!-- Music List Header with icons -->
+          <div class="header">
+            <div class="row">
+              <i class="bi bi-music-note-list" id="more-music"></i>
+            </div>
+            <i id="close" class="bi bi-x"></i>
+          </div>
+          <!-- Dynamic UL to be populated by JavaScript -->
+          <ul></ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/music-list.js"></script>
+    <script src="js/script.js"></script>
+
+    <!-- Bootstrap 5 Bundle JS (includes Popper) -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
